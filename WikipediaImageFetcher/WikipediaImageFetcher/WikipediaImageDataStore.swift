@@ -1,6 +1,7 @@
 import Foundation
 
-//made this as final class because we do not want anyone to sub-class this, the comments made my class above 100 lines, generally try to keep files at 100 lines if possible, trying to work on improving this
+//made this as final class because we do not want anyone to sub-class this, will try to ensure like VC this file does not contain over 100 lines to be concise and neat
+
 final class WikipediaImageDataStore {
 
     static let shared = WikipediaImageDataStore()

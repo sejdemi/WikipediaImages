@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  WikipediaImageFetcher
-//
-//  Created by Sejan Miah on 9/14/17.
-//  Copyright © 2017 Sejan Miah. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class WikipediaImageDisplayVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

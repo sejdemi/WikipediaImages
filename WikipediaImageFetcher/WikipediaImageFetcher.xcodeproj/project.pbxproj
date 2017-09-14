@@ -12,6 +12,9 @@
 		7BDCE7FC1F6AD13A00D079CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCE7FA1F6AD13A00D079CB /* Main.storyboard */; };
 		7BDCE7FE1F6AD13A00D079CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCE7FD1F6AD13A00D079CB /* Assets.xcassets */; };
 		7BDCE8011F6AD13A00D079CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCE7FF1F6AD13A00D079CB /* LaunchScreen.storyboard */; };
+		7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */; };
+		7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */; };
+		7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		7BDCE7FD1F6AD13A00D079CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BDCE8001F6AD13A00D079CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BDCE8021F6AD13A00D079CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClient.swift; sourceTree = "<group>"; };
+		7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientResponse.swift; sourceTree = "<group>"; };
+		7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,65 @@
 		7BDCE7F51F6AD13A00D079CB /* WikipediaImageFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				7BDCE7F61F6AD13A00D079CB /* AppDelegate.swift */,
-				7BDCE7F81F6AD13A00D079CB /* WikipediaImageDisplayVC.swift */,
+				7BDCE8081F6AD3A800D079CB /* Model */,
+				7BDCE8091F6AD3B300D079CB /* Controller */,
+				7BDCE80A1F6AD3CB00D079CB /* Enumerations */,
+				7BDCE80B1F6AD3ED00D079CB /* Networking */,
+				7BDCE80C1F6AD3F900D079CB /* Configurations */,
 				7BDCE7FA1F6AD13A00D079CB /* Main.storyboard */,
+				7BDCE8021F6AD13A00D079CB /* Info.plist */,
+				7BDCE80D1F6AD41000D079CB /* DataStore */,
 				7BDCE7FD1F6AD13A00D079CB /* Assets.xcassets */,
 				7BDCE7FF1F6AD13A00D079CB /* LaunchScreen.storyboard */,
-				7BDCE8021F6AD13A00D079CB /* Info.plist */,
 			);
 			path = WikipediaImageFetcher;
+			sourceTree = "<group>";
+		};
+		7BDCE8081F6AD3A800D079CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7BDCE8091F6AD3B300D079CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BDCE7F61F6AD13A00D079CB /* AppDelegate.swift */,
+				7BDCE7F81F6AD13A00D079CB /* WikipediaImageDisplayVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7BDCE80A1F6AD3CB00D079CB /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */,
+				7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */,
+			);
+			name = Enumerations;
+			sourceTree = "<group>";
+		};
+		7BDCE80B1F6AD3ED00D079CB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		7BDCE80C1F6AD3F900D079CB /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Configurations;
+			sourceTree = "<group>";
+		};
+		7BDCE80D1F6AD41000D079CB /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */,
 				7BDCE7F91F6AD13A00D079CB /* WikipediaImageDisplayVC.swift in Sources */,
+				7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */,
 				7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */,
+				7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

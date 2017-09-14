@@ -16,6 +16,8 @@
 		7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */; };
 		7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */; };
 		7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */; };
+		7BDCE8181F6AEF7800D079CB /* WikipediaImagesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */; };
+		7BDCE81A1F6AEFDE00D079CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8191F6AEFDE00D079CB /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClient.swift; sourceTree = "<group>"; };
 		7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientResponse.swift; sourceTree = "<group>"; };
 		7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientError.swift; sourceTree = "<group>"; };
+		7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaImagesDataStore.swift; sourceTree = "<group>"; };
+		7BDCE8191F6AEFDE00D079CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A6B2FDDB19AA650DC2481200 /* Pods-WikipediaImageFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikipediaImageFetcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,7 @@
 			children = (
 				7BDCE8081F6AD3A800D079CB /* Model */,
 				7BDCE8091F6AD3B300D079CB /* Controller */,
+				7BDCE8161F6AEF5900D079CB /* DataStore */,
 				7BDCE80A1F6AD3CB00D079CB /* Enumerations */,
 				7BDCE80B1F6AD3ED00D079CB /* Networking */,
 				7BDCE80C1F6AD3F900D079CB /* Configurations */,
@@ -100,6 +105,7 @@
 		7BDCE8081F6AD3A800D079CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BDCE8191F6AEFDE00D079CB /* Image.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,6 +141,14 @@
 			children = (
 			);
 			name = Configurations;
+			sourceTree = "<group>";
+		};
+		7BDCE8161F6AEF5900D079CB /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */,
+			);
+			name = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +229,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -230,13 +247,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WikipediaImageFetcher-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC93C0B599FFF3285E8CCD5D /* [CP] Copy Pods Resources */ = {
@@ -261,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDCE81A1F6AEFDE00D079CB /* Image.swift in Sources */,
 				7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */,
+				7BDCE8181F6AEF7800D079CB /* WikipediaImagesDataStore.swift in Sources */,
 				7BDCE7F91F6AD13A00D079CB /* WikipediaImageDisplayVC.swift in Sources */,
 				7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */,
 				7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */,

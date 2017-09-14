@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WikipediaImageFetcher/Image.swift"
+            timestampString = "527124694.172362"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WikipediaImageFetcher.Image.__deallocating_deinit"
+                  moduleName = "WikipediaImageFetcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sejanmiah/Desktop/WikipediaImages/WikipediaImageFetcher/WikipediaImageFetcher/Image.swift"
+                  timestampString = "527124970.790542"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WikipediaImageFetcher.Image.deinit"
+                  moduleName = "WikipediaImageFetcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sejanmiah/Desktop/WikipediaImages/WikipediaImageFetcher/WikipediaImageFetcher/Image.swift"
+                  timestampString = "527124970.79328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

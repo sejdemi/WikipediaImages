@@ -2,14 +2,24 @@ import UIKit
 
 class WikipediaImageDisplayVC: UIViewController {
 
-    @IBAction func searchField(_ sender: Any) {
-    }
 
+    @IBOutlet weak var searchField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        WikipediaAPIClient.generateWikipediaImages(for: "Cat") { (response) in
+
+//            print(response)
+        }
     }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        WikipediaAPIClient.generateWikipediaImages(for: "Cat") { (response) in
+//
+//            print(response)
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

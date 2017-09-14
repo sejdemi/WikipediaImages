@@ -15,6 +15,7 @@ final class WikipediaAPIClient {
 
         let url = baseURL + searchTerm + otherInfoURL
         //print("SpoonacularAPIClient.\(#function) -- \(url)")
+        
 
         Alamofire.request(url, method: .get).responseJSON {
             (response) in

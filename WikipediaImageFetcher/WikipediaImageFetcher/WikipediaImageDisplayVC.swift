@@ -3,7 +3,6 @@ import UIKit
 class WikipediaImageDisplayVC: UIViewController {
 
     @IBAction func searchField(_ sender: Any) {
-        
     }
 
 

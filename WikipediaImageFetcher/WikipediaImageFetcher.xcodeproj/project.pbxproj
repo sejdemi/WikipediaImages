@@ -16,7 +16,6 @@
 		7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */; };
 		7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */; };
 		7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */; };
-		7BDCE8151F6AD6EC00D079CB /* WikipediaImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClient.swift; sourceTree = "<group>"; };
 		7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientResponse.swift; sourceTree = "<group>"; };
 		7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientError.swift; sourceTree = "<group>"; };
-		7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaImageDataStore.swift; sourceTree = "<group>"; };
 		A6B2FDDB19AA650DC2481200 /* Pods-WikipediaImageFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikipediaImageFetcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +91,6 @@
 				7BDCE80C1F6AD3F900D079CB /* Configurations */,
 				7BDCE7FA1F6AD13A00D079CB /* Main.storyboard */,
 				7BDCE8021F6AD13A00D079CB /* Info.plist */,
-				7BDCE80D1F6AD41000D079CB /* DataStore */,
 				7BDCE7FD1F6AD13A00D079CB /* Assets.xcassets */,
 				7BDCE7FF1F6AD13A00D079CB /* LaunchScreen.storyboard */,
 			);
@@ -138,14 +135,6 @@
 			children = (
 			);
 			name = Configurations;
-			sourceTree = "<group>";
-		};
-		7BDCE80D1F6AD41000D079CB /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-				7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */,
-			);
-			name = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +266,6 @@
 				7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */,
 				7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */,
 				7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */,
-				7BDCE8151F6AD6EC00D079CB /* WikipediaImageDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +433,7 @@
 				7BDCE8071F6AD13A00D079CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

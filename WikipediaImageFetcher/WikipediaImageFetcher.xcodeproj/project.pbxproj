@@ -15,6 +15,7 @@
 		7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */; };
 		7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */; };
 		7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */; };
+		7BDCE8151F6AD6EC00D079CB /* WikipediaImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClient.swift; sourceTree = "<group>"; };
 		7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientResponse.swift; sourceTree = "<group>"; };
 		7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientError.swift; sourceTree = "<group>"; };
+		7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaImageDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		7BDCE80D1F6AD41000D079CB /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				7BDCE8141F6AD6EC00D079CB /* WikipediaImageDataStore.swift */,
 			);
 			name = DataStore;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */,
 				7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */,
 				7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */,
+				7BDCE8151F6AD6EC00D079CB /* WikipediaImageDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,6 @@
+framework module Pods_WikipediaImageFetcher {
+  umbrella header "Pods-WikipediaImageFetcher-umbrella.h"
+
+  export *
+  module * { export * }
+}

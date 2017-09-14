@@ -4,6 +4,8 @@ import Foundation
 
 final class WikipediaAPIClient {
 
-    var wikipediaImageObjects = [[String: Any]]
+    var wikipediaImageObjects = [[String: Any]]()
+
+    
 
 }

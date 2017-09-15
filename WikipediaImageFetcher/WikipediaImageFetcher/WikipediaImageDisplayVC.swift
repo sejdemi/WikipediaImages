@@ -11,17 +11,6 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
         searchField.addTarget(self, action: #selector(WikipediaImageDisplayVC.textDidChange(_:)), for: UIControlEvents.editingChanged)
     }
 
-    var visibleRows: [Image] {
-        var visibleCells: [Image] = []
-        if let visibleRows = self.collectionView.indexPathsForVisibleRows {
-            visibleRows.forEach {
-                visibleCells.append($0.row)
-            }
-        }
-        return visibleCells
-    }
-
-
     func textDidChange(_ sender: UITextField) {
         WikipediaAPIClient.generateWikipediaImages(for: searchField.text ?? "") {
             (response) in
@@ -52,12 +41,11 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
-        if cell.delegate == nil { cell.delegate = self as! VisibleCellsProtocol }
+//        if cell.delegate == nil { cell.delegate = self }
         return cell
-
-
     }
 
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at 
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //        let currentCell = cell as! WikipediaImageViewCell
 //        currentCell.im = BookStore.highlander.books[indexPath.row]

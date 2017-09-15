@@ -56,21 +56,21 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
 
 
 
-extension WikipediaAPIClient {
-
-    class func getImage(url: URL, completion: @escaping (Data) -> Void) {
-        let urlRequest = URLRequest(url: url)
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
-            DispatchQueue.main.async { // this works here because the completion handlers connect everything
-                if let data = data {
-                    completion(data)
-                }
-            }
-        }
-        dataTask.resume()
-    }
-}
+//extension WikipediaAPIClient {
+//
+//    class func getImage(url: URL, completion: @escaping (Data) -> Void) {
+//        let urlRequest = URLRequest(url: url)
+//        let session = URLSession.shared
+//        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
+//            DispatchQueue.main.async { // this works here because the completion handlers connect everything
+//                if let data = data {
+//                    completion(data)
+//                }
+//            }
+//        }
+//        dataTask.resume()
+//    }
+//}
 
 
 /* Initially, I wrote this function like this:

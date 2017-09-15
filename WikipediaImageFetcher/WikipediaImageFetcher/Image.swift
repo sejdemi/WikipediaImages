@@ -20,14 +20,14 @@ class Image {
         self.url = URL(string: thumbnail)
     }
 
-    func setImage(completion: @escaping () -> Void) {
-        if let url = self.url {
-            WikipediaAPIClient.getImage(url: url, completion: { (data) in
-                self.image = UIImage(data: data)
-                completion()
-            })
-        }
-    }
+//    func setImage(completion: @escaping () -> Void) {
+//        if let url = self.url {
+//            WikipediaAPIClient.getImage(url: url, completion: { (data) in
+//                self.image = UIImage(data: data)
+//                completion()
+//            })
+//        }
+//    }
 
 
 

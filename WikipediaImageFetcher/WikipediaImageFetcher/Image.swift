@@ -5,7 +5,7 @@ import UIKit
 class Image {
 
     //wanted to keep the title in so as to give the user (you) a little bit of background on what they were looking at
-    var title: String
+//    var title: String
     //the link to the url string is represented by this property
     var thumbnail: String
 //    var url: URL?
@@ -14,8 +14,8 @@ class Image {
 
     static var imageArray = [Image]()
 
-    init(pageID: String, thumbnail: String) {
-        self.title = pageID
+    init(thumbnail: String) {
+//        self.title = pageID
         self.thumbnail = thumbnail
 //        self.url = URL(string: thumbnail)
     }

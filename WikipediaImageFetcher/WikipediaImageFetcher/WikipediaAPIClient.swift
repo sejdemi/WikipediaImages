@@ -37,9 +37,9 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
 
     for page in pagesJSON {
 
-        let image = Image(pageID: "", thumbnail: "")
+        let image = Image(thumbnail: "")
         let valueJSON = page.value as? [String: Any] ?? ["": ""]
-        image.title = valueJSON["title"] as? String ?? ""
+//        image.title = valueJSON["title"] as? String ?? ""
         if let urlJSON = valueJSON["thumbnail"] as? [String: Any]  {
             image.thumbnail = urlJSON["source"] as? String ?? ""
         }

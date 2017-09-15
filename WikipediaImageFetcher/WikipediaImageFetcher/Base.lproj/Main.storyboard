@@ -28,53 +28,55 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-bT-fyF">
-                                <rect key="frame" x="0.0" y="41" width="375" height="664"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-d2-xKK">
+                                <rect key="frame" x="0.0" y="42" width="375" height="625"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="163" id="xB4-qa-Kte" customClass="WikipediaImageViewCell" customModule="WikipediaImageFetcher" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="163"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-qa-Kte" id="cu7-Nm-VYc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QrQ-Fx-aIr">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="yFZ-ag-TFl" customClass="WikipediaImageViewCell" customModule="WikipediaImageFetcher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iu6-fx-rqi">
-                                                    <rect key="frame" x="80" y="-1" width="214" height="164"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="imageCell"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-Sq-DKA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="height" secondItem="cu7-Nm-VYc" secondAttribute="height" constant="1.5" id="31R-r1-aYR"/>
-                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="leading" secondItem="cu7-Nm-VYc" secondAttribute="leadingMargin" constant="72" id="HKz-dy-cFd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="iu6-fx-rqi" secondAttribute="trailing" constant="73" id="oM7-Nd-o2y"/>
-                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="top" secondItem="cu7-Nm-VYc" secondAttribute="top" constant="-1" id="sUm-ct-kqg"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        </view>
                                         <constraints>
-                                            <constraint firstItem="iu6-fx-rqi" firstAttribute="centerX" secondItem="xB4-qa-Kte" secondAttribute="centerX" constant="-0.5" id="znh-Ug-E7V"/>
+                                            <constraint firstItem="gtZ-Sq-DKA" firstAttribute="leading" secondItem="yFZ-ag-TFl" secondAttribute="leading" id="4NU-r7-Kyt"/>
+                                            <constraint firstAttribute="bottom" secondItem="gtZ-Sq-DKA" secondAttribute="bottom" id="Aaj-BW-p7f"/>
+                                            <constraint firstAttribute="trailing" secondItem="gtZ-Sq-DKA" secondAttribute="trailing" id="I28-DW-BMP"/>
+                                            <constraint firstItem="gtZ-Sq-DKA" firstAttribute="top" secondItem="yFZ-ag-TFl" secondAttribute="top" id="UkV-7l-sP3"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageViewCell" destination="iu6-fx-rqi" id="cNz-vK-nMu"/>
+                                            <outlet property="imageViewCell" destination="gtZ-Sq-DKA" id="UEJ-0P-wxW"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="leading" secondItem="mPP-bT-fyF" secondAttribute="leading" id="37n-BC-eQO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mPP-bT-fyF" secondAttribute="trailing" constant="-16" id="Qvf-gh-1NL"/>
+                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="trailing" secondItem="O8q-d2-xKK" secondAttribute="trailing" id="4wV-xJ-hYN"/>
+                            <constraint firstItem="O8q-d2-xKK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="EtL-0F-ZLe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O8q-d2-xKK" secondAttribute="bottom" id="Qau-ZP-YX9"/>
                             <constraint firstItem="DYB-cb-Vnz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RU7-bB-QFb"/>
-                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="trailing" secondItem="mPP-bT-fyF" secondAttribute="trailing" id="axs-f5-OLB"/>
-                            <constraint firstItem="mPP-bT-fyF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="bdz-PJ-Dt2"/>
-                            <constraint firstItem="mPP-bT-fyF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-3" id="kW5-bE-OGz"/>
-                            <constraint firstItem="mPP-bT-fyF" firstAttribute="top" secondItem="DYB-cb-Vnz" secondAttribute="bottom" id="qIM-ND-rWJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O8q-d2-xKK" secondAttribute="trailing" constant="-16" id="oLy-dV-0bC"/>
+                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="leading" secondItem="O8q-d2-xKK" secondAttribute="leading" id="ueZ-em-woO"/>
+                            <constraint firstItem="O8q-d2-xKK" firstAttribute="top" secondItem="DYB-cb-Vnz" secondAttribute="bottom" constant="1" id="xeu-Bz-o1l"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="O8q-d2-xKK" id="sZH-pc-TvB"/>
                         <outlet property="searchField" destination="DYB-cb-Vnz" id="WiI-EU-WxN"/>
-                        <outlet property="tableView" destination="mPP-bT-fyF" id="CJW-ux-K0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

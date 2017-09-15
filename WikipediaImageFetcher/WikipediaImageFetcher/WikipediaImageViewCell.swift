@@ -1,6 +1,6 @@
 import UIKit
 
-class WikipediaImageViewCell: UITableViewCell {
+class WikipediaImageViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageViewCell: UIImageView!
     

@@ -40,22 +40,41 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
         let image = Image(pageID: "", thumbnail: "")
         let valueJSON = page.value as? [String: Any] ?? ["": ""]
         image.title = valueJSON["title"] as? String ?? ""
-        let urlJSON = valueJSON["thumbnail"] as? [String: Any] ?? ["": ""]
-        image.thumbnail = urlJSON["source"] as? String ?? ""
+        if let urlJSON = valueJSON["thumbnail"] as? [String: Any]  {
+            image.thumbnail = urlJSON["source"] as? String ?? ""
+        }
         //                    imageArray.append(image)
         Image.imageArray.append(image)
-        //                    print(image.thumbnail)
-        
-        
+        print(image.thumbnail)
+
     }
-    
-    print(Image.imageArray)
+
+    //    print(Image.imageArray)
     return Image.imageArray
 }
 
 
+
+
+extension WikipediaAPIClient {
+
+    class func getImage(url: URL, completion: @escaping (Data) -> Void) {
+        let urlRequest = URLRequest(url: url)
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
+            DispatchQueue.main.async { // this works here because the completion handlers connect everything
+                if let data = data {
+                    completion(data)
+                }
+            }
+        }
+        dataTask.resume()
+    }
+}
+
+
 /* Initially, I wrote this function like this:
- 
+
  private func getImageDetails(from json: [String: Any]) -> [Image] {
  //    var imageArray = [Image]()
 
@@ -80,6 +99,6 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
  }
  return Image.imageArray
  }
- 
+
  I tried to avoid the pyramid of doom by using the nil coalescing operators instead. I am fully aware that this may not be the best use of error handling, I know that traditionally many people use do, try, catch, but I did not want to make my API Client class' code be particularly long. Just wanted to prove my insight on that.
-*/
+ */

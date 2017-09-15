@@ -10,6 +10,7 @@
 		323D3E50BE09C23E032AF911 /* Pods_WikipediaImageFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092BDEEA83AF39915C2FB642 /* Pods_WikipediaImageFetcher.framework */; };
 		7B3BD4661F6C4FD40036F93A /* WikipediaImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BD4651F6C4FD40036F93A /* WikipediaImageViewCell.swift */; };
 		7B3BD46C1F6C87060036F93A /* black texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B3BD46B1F6C87060036F93A /* black texture.jpg */; };
+		7B3BD46E1F6C8BD10036F93A /* VisibleCellsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BD46D1F6C8BD10036F93A /* VisibleCellsProtocol.swift */; };
 		7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE7F61F6AD13A00D079CB /* AppDelegate.swift */; };
 		7BDCE7F91F6AD13A00D079CB /* WikipediaImageDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE7F81F6AD13A00D079CB /* WikipediaImageDisplayVC.swift */; };
 		7BDCE7FC1F6AD13A00D079CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCE7FA1F6AD13A00D079CB /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		5863C6793FAC387926CFB944 /* Pods-WikipediaImageFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikipediaImageFetcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher.release.xcconfig"; sourceTree = "<group>"; };
 		7B3BD4651F6C4FD40036F93A /* WikipediaImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaImageViewCell.swift; sourceTree = "<group>"; };
 		7B3BD46B1F6C87060036F93A /* black texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black texture.jpg"; sourceTree = "<group>"; };
+		7B3BD46D1F6C8BD10036F93A /* VisibleCellsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleCellsProtocol.swift; sourceTree = "<group>"; };
 		7BDCE7F31F6AD13A00D079CB /* WikipediaImageFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikipediaImageFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDCE7F61F6AD13A00D079CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BDCE7F81F6AD13A00D079CB /* WikipediaImageDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaImageDisplayVC.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7B3BD4651F6C4FD40036F93A /* WikipediaImageViewCell.swift */,
+				7B3BD46D1F6C8BD10036F93A /* VisibleCellsProtocol.swift */,
 			);
 			name = "Custom Cell";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3BD46E1F6C8BD10036F93A /* VisibleCellsProtocol.swift in Sources */,
 				7BDCE81A1F6AEFDE00D079CB /* Image.swift in Sources */,
 				7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */,
 				7B3BD4661F6C4FD40036F93A /* WikipediaImageViewCell.swift in Sources */,

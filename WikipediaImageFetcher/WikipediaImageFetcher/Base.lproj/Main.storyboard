@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +22,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter search term " textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-cb-Vnz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="enter search term " textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-cb-Vnz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Wfx-pT-RGQ"/>
-                                </connections>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPP-bT-fyF">
+                                <rect key="frame" x="0.0" y="41" width="375" height="664"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="163" id="xB4-qa-Kte" customClass="WikipediaImageViewCell" customModule="WikipediaImageFetcher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="163"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-qa-Kte" id="cu7-Nm-VYc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iu6-fx-rqi">
+                                                    <rect key="frame" x="80" y="-1" width="214" height="164"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="imageCell"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="height" secondItem="cu7-Nm-VYc" secondAttribute="height" constant="1.5" id="31R-r1-aYR"/>
+                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="leading" secondItem="cu7-Nm-VYc" secondAttribute="leadingMargin" constant="72" id="HKz-dy-cFd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iu6-fx-rqi" secondAttribute="trailing" constant="73" id="oM7-Nd-o2y"/>
+                                                <constraint firstItem="iu6-fx-rqi" firstAttribute="top" secondItem="cu7-Nm-VYc" secondAttribute="top" constant="-1" id="sUm-ct-kqg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="iu6-fx-rqi" firstAttribute="centerX" secondItem="xB4-qa-Kte" secondAttribute="centerX" constant="-0.5" id="znh-Ug-E7V"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageViewCell" destination="iu6-fx-rqi" id="ZRb-pu-Sz3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="leading" secondItem="mPP-bT-fyF" secondAttribute="leading" id="37n-BC-eQO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mPP-bT-fyF" secondAttribute="trailing" constant="-16" id="Qvf-gh-1NL"/>
+                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RU7-bB-QFb"/>
+                            <constraint firstItem="DYB-cb-Vnz" firstAttribute="trailing" secondItem="mPP-bT-fyF" secondAttribute="trailing" id="axs-f5-OLB"/>
+                            <constraint firstItem="mPP-bT-fyF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="bdz-PJ-Dt2"/>
+                            <constraint firstItem="mPP-bT-fyF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-3" id="kW5-bE-OGz"/>
+                            <constraint firstItem="mPP-bT-fyF" firstAttribute="top" secondItem="DYB-cb-Vnz" secondAttribute="bottom" id="qIM-ND-rWJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="searchField" destination="DYB-cb-Vnz" id="WiI-EU-WxN"/>
+                        <outlet property="tableView" destination="mPP-bT-fyF" id="CJW-ux-K0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

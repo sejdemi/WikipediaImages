@@ -35,10 +35,10 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
     if let queryJSON = json["query"] as? [String: Any] {
         if let pagesJSON = queryJSON["pages"] as? [String: Any] {
             for page in pagesJSON {
-                var image = Image(pageID: "", thumbnail: "")
+                let image = Image(pageID: "", thumbnail: "")
                 if let valueJSON = page.value as? [String: Any]{
                     image.title = valueJSON["title"] as? String ?? ""
-                    if let urlJSON = valueJSON["thumbnail"] as? [String: Any]{
+                    if let urlJSON = valueJSON["thumbnail"] as? [String: Any] {
                         image.thumbnail = urlJSON["source"] as? String ?? ""
                     }
                     imageArray.append(image)
@@ -50,6 +50,5 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
     }
     
     return imageArray
-    
 }
 

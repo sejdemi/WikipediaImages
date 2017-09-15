@@ -15,6 +15,7 @@ class Image {
 
 }
 
+//not sure we even need an Image class, the API calls themselves treat this model as throw away variables since they are constantly changing
 
 
 

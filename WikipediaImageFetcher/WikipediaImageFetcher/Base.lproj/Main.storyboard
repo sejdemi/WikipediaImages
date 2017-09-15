@@ -55,7 +55,7 @@
                                             <constraint firstItem="iu6-fx-rqi" firstAttribute="centerX" secondItem="xB4-qa-Kte" secondAttribute="centerX" constant="-0.5" id="znh-Ug-E7V"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageViewCell" destination="iu6-fx-rqi" id="ZRb-pu-Sz3"/>
+                                            <outlet property="imageViewCell" destination="iu6-fx-rqi" id="cNz-vK-nMu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

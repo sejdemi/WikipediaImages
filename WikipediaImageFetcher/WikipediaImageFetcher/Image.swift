@@ -10,7 +10,6 @@ class Image {
 
     static var imageArray = [Image]()
 
-
     init(pageID: String, thumbnail: String) {
         self.title = pageID
         self.thumbnail = thumbnail

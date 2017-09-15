@@ -1,13 +1,15 @@
 import Foundation
 
-
+//I thought long and hard about whether or not I needed a model class for this particular challenge. I thought that for organizational purposes I would keep my Image class in arather than having a generic dictionary that had two key, value pairs that conveyed the same thing.
 class Image {
 
-    let pageID: String
-    let thumbnail: String
+    //wanted to keep the title in so as to give the user (you) a little bit of background on what they were looking at
+    var title: String
+    //the link to the url string is represented by this property
+    var thumbnail: String
 
     init(pageID: String, thumbnail: String) {
-        self.pageID = pageID
+        self.title = pageID
         self.thumbnail = thumbnail
     }
 
@@ -15,22 +17,4 @@ class Image {
 
 
 
-//class Image  {
-//    let thumbnail: String
-//    let pageKey: String
-//
-//    init?(dictionary: [String: Any]) {
-//        guard let id = dictionary["query"] as? [String: Any],
-//            let pages = id["pages"] as? [String: Any],
-//            let pageKey = pages.keys as? String,
-//            let pageID = pages[pageKey] as? [String: Any],
-//            let source = pageID["thumbnail"] as? [String: Any],
-//            let thumbnail = source["source"] as? String else {
-//                return nil
-//        }
-//        
-//        self.pageKey = pageKey
-//        self.thumbnail = thumbnail
-//    }
-//    
-//}
+

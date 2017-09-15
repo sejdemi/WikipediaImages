@@ -14,12 +14,6 @@ class WikipediaImageDisplayVC: UIViewController {
         }
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        WikipediaAPIClient.generateWikipediaImages(for: "Cat") { (response) in
-//
-//            print(response)
-//        }
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

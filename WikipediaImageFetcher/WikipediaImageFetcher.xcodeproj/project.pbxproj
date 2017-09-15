@@ -16,7 +16,6 @@
 		7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */; };
 		7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */; };
 		7BDCE8131F6AD66800D079CB /* WikipediaAPIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */; };
-		7BDCE8181F6AEF7800D079CB /* WikipediaImagesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */; };
 		7BDCE81A1F6AEFDE00D079CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE8191F6AEFDE00D079CB /* Image.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClient.swift; sourceTree = "<group>"; };
 		7BDCE8101F6AD63A00D079CB /* WikipediaAPIClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientResponse.swift; sourceTree = "<group>"; };
 		7BDCE8121F6AD66800D079CB /* WikipediaAPIClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPIClientError.swift; sourceTree = "<group>"; };
-		7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaImagesDataStore.swift; sourceTree = "<group>"; };
 		7BDCE8191F6AEFDE00D079CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A6B2FDDB19AA650DC2481200 /* Pods-WikipediaImageFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikipediaImageFetcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +88,6 @@
 			children = (
 				7BDCE8081F6AD3A800D079CB /* Model */,
 				7BDCE8091F6AD3B300D079CB /* Controller */,
-				7BDCE8161F6AEF5900D079CB /* DataStore */,
 				7BDCE80A1F6AD3CB00D079CB /* Enumerations */,
 				7BDCE80B1F6AD3ED00D079CB /* Networking */,
 				7BDCE80C1F6AD3F900D079CB /* Configurations */,
@@ -141,14 +138,6 @@
 			children = (
 			);
 			name = Configurations;
-			sourceTree = "<group>";
-		};
-		7BDCE8161F6AEF5900D079CB /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-				7BDCE8171F6AEF7800D079CB /* WikipediaImagesDataStore.swift */,
-			);
-			name = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +272,6 @@
 			files = (
 				7BDCE81A1F6AEFDE00D079CB /* Image.swift in Sources */,
 				7BDCE8111F6AD63A00D079CB /* WikipediaAPIClientResponse.swift in Sources */,
-				7BDCE8181F6AEF7800D079CB /* WikipediaImagesDataStore.swift in Sources */,
 				7BDCE7F91F6AD13A00D079CB /* WikipediaImageDisplayVC.swift in Sources */,
 				7BDCE80F1F6AD48500D079CB /* WikipediaAPIClient.swift in Sources */,
 				7BDCE7F71F6AD13A00D079CB /* AppDelegate.swift in Sources */,

@@ -22,7 +22,7 @@ class Image {
 
     func setImage(completion: @escaping () -> Void) {
         if let url = self.url {
-            APIClient.getCover(url: url, completion: { (data) in
+            WikipediaAPIClient.getImage(url: url, completion: { (data) in
                 self.image = UIImage(data: data)
                 completion()
             })

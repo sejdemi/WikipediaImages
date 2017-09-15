@@ -23,5 +23,25 @@ class Image {
 
 //not sure we even need an Image class, the API calls themselves treat this model as throw away variables since they are constantly changing
 
+extension Image {
 
+    func downloadImage(handler: @escaping (Bool) -> Void) {
+        guard let url = URL(string: thumbnail) else { (handler: handler); return }
+        WikipediaAPIClient.downloadImage(at: url, handler: { image in
+            if self.image == nil {
+                self.setupNoImage(handler: handler)
+                return
+            }
+            self.image = image
+            handler(true)
+        })
+    }
+
+    func setupNoImage(handler: @escaping (Bool) -> Void) {
+        let randomNumber = Int(arc4random_uniform(4))
+        let name = "CellBackground" + String(randomNumber)
+        image = UIImage(named: "black texture.jpg")!
+        handler(true)
+    }
+}
 

@@ -14,8 +14,6 @@ final class WikipediaAPIClient {
 
             guard let json = response.result.value else {return}
 
-            var responseItems = [[String: String]]()
-
             if let responseJSON = json as? [String: Any] {
 
                 let imageDetails = getImageDetails(from: responseJSON)

@@ -49,7 +49,7 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
         
     }
     
-    
+    print(Image.imageArray)
     return Image.imageArray
 }
 

@@ -67,6 +67,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7B3BD46A1F6C6CB00036F93A /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B3BD4651F6C4FD40036F93A /* WikipediaImageViewCell.swift */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		7BDCE7EA1F6AD13A00D079CB = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +98,7 @@
 			children = (
 				7BDCE8081F6AD3A800D079CB /* Model */,
 				7BDCE8091F6AD3B300D079CB /* Controller */,
+				7B3BD46A1F6C6CB00036F93A /* Custom Cell */,
 				7BDCE80A1F6AD3CB00D079CB /* Enumerations */,
 				7BDCE80B1F6AD3ED00D079CB /* Networking */,
 				7BDCE80C1F6AD3F900D079CB /* Configurations */,
@@ -131,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				7BDCE80E1F6AD48500D079CB /* WikipediaAPIClient.swift */,
-				7B3BD4651F6C4FD40036F93A /* WikipediaImageViewCell.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -223,10 +231,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WikipediaImageFetcher/Pods-WikipediaImageFetcher-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

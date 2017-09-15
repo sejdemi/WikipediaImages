@@ -3,9 +3,8 @@ import UIKit
 class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-
+    var imageArray = Image.imageArray
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,9 +15,11 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UITableVie
 
 
     func textDidChange(_ sender: UITextField) {
-        WikipediaAPIClient.generateWikipediaImages(for: searchField.text ?? "") { (response) in
+        WikipediaAPIClient.generateWikipediaImages(for: searchField.text ?? "") {
+            (response) in
+
             DispatchQueue.main.async {
-                print("it worked")
+                self.tableView.reloadData()
             }
         }
     }
@@ -36,8 +37,26 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! WikipediaImageViewCell
+        var image = imageArray[indexPath.row]
+
+        if let url = URL(string: image.thumbnail) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                //"promise" forcing this piece of async code to be sync, so it happens in my for loop
+                guard let data = data, error == nil else { return }
+
+                DispatchQueue.main.sync() {
+                    cell.imageView?.image = UIImage(data: data)
+                    //setting that data equal to data of the first image view
+                }
+            }
+            DispatchQueue.global(qos: .background).async {
+
+                task.resume()
+            }
+        }
+        return cell
+}
 
 
 }

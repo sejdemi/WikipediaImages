@@ -8,6 +8,9 @@ class Image {
     //the link to the url string is represented by this property
     var thumbnail: String
 
+    static var imageArray = [Image]()
+
+
     init(pageID: String, thumbnail: String) {
         self.title = pageID
         self.thumbnail = thumbnail

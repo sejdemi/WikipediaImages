@@ -8,8 +8,8 @@ class Image {
     var title: String
     //the link to the url string is represented by this property
     var thumbnail: String
-    var url: URL?
-    var image: UIImage?
+//    var url: URL?
+//    var image: UIImage?
 
 
     static var imageArray = [Image]()
@@ -17,7 +17,7 @@ class Image {
     init(pageID: String, thumbnail: String) {
         self.title = pageID
         self.thumbnail = thumbnail
-        self.url = URL(string: thumbnail)
+//        self.url = URL(string: thumbnail)
     }
 
 //    func setImage(completion: @escaping () -> Void) {

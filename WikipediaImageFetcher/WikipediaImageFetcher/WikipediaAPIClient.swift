@@ -30,23 +30,56 @@ final class WikipediaAPIClient {
 
 private func getImageDetails(from json: [String: Any]) -> [Image] {
     //    var imageArray = [Image]()
-    if let queryJSON = json["query"] as? [String: Any] {
-        if let pagesJSON = queryJSON["pages"] as? [String: Any] {
-            for page in pagesJSON {
-                let image = Image(pageID: "", thumbnail: "")
-                if let valueJSON = page.value as? [String: Any]{
-                    image.title = valueJSON["title"] as? String ?? ""
-                    if let urlJSON = valueJSON["thumbnail"] as? [String: Any] {
-                        image.thumbnail = urlJSON["source"] as? String ?? ""
-                    }
-                    //                    imageArray.append(image)
-                    Image.imageArray.append(image)
-                    //                    print(image.thumbnail)
-                }
-                
-            }
-        }
+
+    let queryJSON = json["query"] as? [String: Any] ?? ["": ""]
+
+    let pagesJSON = queryJSON["pages"] as? [String: Any] ?? ["": ""]
+
+    for page in pagesJSON {
+
+        let image = Image(pageID: "", thumbnail: "")
+        let valueJSON = page.value as? [String: Any] ?? ["": ""]
+        image.title = valueJSON["title"] as? String ?? ""
+        let urlJSON = valueJSON["thumbnail"] as? [String: Any] ?? ["": ""]
+        image.thumbnail = urlJSON["source"] as? String ?? ""
+        //                    imageArray.append(image)
+        Image.imageArray.append(image)
+        //                    print(image.thumbnail)
+        
+        
     }
+    
+    
     return Image.imageArray
 }
 
+
+/* Initially, I wrote this function like this:
+ 
+ private func getImageDetails(from json: [String: Any]) -> [Image] {
+ //    var imageArray = [Image]()
+
+ let queryJSON = json["query"] as? [String: Any] ?? ["" : ""]
+
+ if let queryJSON = json["query"] as? [String: Any] {
+ if let pagesJSON = queryJSON["pages"] as? [String: Any] {
+ for page in pagesJSON {
+ let image = Image(pageID: "", thumbnail: "")
+ if let valueJSON = page.value as? [String: Any]{
+ image.title = valueJSON["title"] as? String ?? ""
+ if let urlJSON = valueJSON["thumbnail"] as? [String: Any] {
+ image.thumbnail = urlJSON["source"] as? String ?? ""
+ }
+ //                    imageArray.append(image)
+ Image.imageArray.append(image)
+ //                    print(image.thumbnail)
+ }
+
+ }
+ }
+ }
+ return Image.imageArray
+ }
+ 
+ I tried to avoid the pyramid of doom by using the nil coalescing operators instead. I am fully aware that this may not be the best use of error handling, I know that traditionally many people use do, try, catch, but I did not want to make my API Client class' code be particularly long. Just wanted to prove my insight on that.
+*/

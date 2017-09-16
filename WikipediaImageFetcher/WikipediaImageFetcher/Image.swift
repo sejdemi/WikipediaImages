@@ -23,9 +23,7 @@ class Image {
     var image: UIImage?
 
     init(thumbnail: String) {
-//        self.title = pageID
         self.thumbnail = thumbnail
-//        self.url = URL(string: thumbnail)
     }
 
 }

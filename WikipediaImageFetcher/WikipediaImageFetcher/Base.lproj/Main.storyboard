@@ -30,8 +30,8 @@
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-d2-xKK">
                                 <rect key="frame" x="0.0" y="42" width="375" height="625"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QrQ-Fx-aIr">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="QrQ-Fx-aIr">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -61,6 +61,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ugD-tt-luN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aT3-dm-gWl"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +74,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O8q-d2-xKK" secondAttribute="bottom" id="Qau-ZP-YX9"/>
                             <constraint firstItem="DYB-cb-Vnz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RU7-bB-QFb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O8q-d2-xKK" secondAttribute="trailing" constant="-16" id="oLy-dV-0bC"/>
+                            <constraint firstItem="O8q-d2-xKK" firstAttribute="width" secondItem="DYB-cb-Vnz" secondAttribute="width" id="p95-tF-NYW"/>
                             <constraint firstItem="DYB-cb-Vnz" firstAttribute="leading" secondItem="O8q-d2-xKK" secondAttribute="leading" id="ueZ-em-woO"/>
                             <constraint firstItem="O8q-d2-xKK" firstAttribute="top" secondItem="DYB-cb-Vnz" secondAttribute="bottom" constant="1" id="xeu-Bz-o1l"/>
                         </constraints>

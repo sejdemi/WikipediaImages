@@ -30,7 +30,6 @@ final class WikipediaAPIClient {
 
 private func getImageDetails(from json: [String: Any]) -> [Image] {
     var imageArray = [Image]()
-
     let queryJSON = json["query"] as? [String: Any] ?? ["": ""]
 
     let pagesJSON = queryJSON["pages"] as? [String: Any] ?? ["": ""]
@@ -41,17 +40,17 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
         let image = Image(thumbnail: "")
 
         let valueJSON = page.value as? [String: Any] ?? ["": ""]
-//        image.title = valueJSON["title"] as? String ?? ""
+        //        image.title = valueJSON["title"] as? String ?? ""
         if let urlJSON = valueJSON["thumbnail"] as? [String: Any]  {
             image.thumbnail = urlJSON["source"] as? String ?? ""
         }
 
-//        if image.thumbnail == "" {
-//            image.thumbnail =  "https://media.timeout.com/images/103444978/image.jpg"
-//        }
-        imageArray.append(image)
-        print(image.thumbnail)
+        //        if image.thumbnail == "" {
+        //            image.thumbnail =  "https://media.timeout.com/images/103444978/image.jpg"
+        //        }
 
+        imageArray.append(image)
+        //        print(image.thumbnail)
     }
 
     return imageArray

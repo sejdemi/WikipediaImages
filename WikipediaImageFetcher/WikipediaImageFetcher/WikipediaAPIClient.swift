@@ -37,17 +37,12 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
     for page in pagesJSON {
 
         //provide default thumbnail value in case of no existing image
-        let image = Image(thumbnail: "")
+        let image = Image(thumbnail: "https://media.timeout.com/images/103444978/image.jpg")
 
         let valueJSON = page.value as? [String: Any] ?? ["": ""]
-        //        image.title = valueJSON["title"] as? String ?? ""
         if let urlJSON = valueJSON["thumbnail"] as? [String: Any]  {
             image.thumbnail = urlJSON["source"] as? String ?? ""
         }
-
-        //        if image.thumbnail == "" {
-        //            image.thumbnail =  "https://media.timeout.com/images/103444978/image.jpg"
-        //        }
 
         imageArray.append(image)
         //        print(image.thumbnail)

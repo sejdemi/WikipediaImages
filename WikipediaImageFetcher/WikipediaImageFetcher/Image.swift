@@ -45,8 +45,6 @@ extension Image {
     }
 
     func setupNoImage(handler: @escaping (Bool) -> Void) {
-        let randomNumber = Int(arc4random_uniform(4))
-        let name = "CellBackground" + String(randomNumber)
         image = UIImage(named: "black texture.jpg")!
         handler(true)
     }

@@ -55,6 +55,15 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
         let image = allImages[indexPath.item].image
         cell.imageViewCell.image = image
+
+        let finalFrame: CGRect = cell.frame
+        cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 200, height: 200)
+
+        UIView.animate(withDuration: 1, animations: {
+            cell.frame = finalFrame
+
+        })
+
         return cell
     }
 }

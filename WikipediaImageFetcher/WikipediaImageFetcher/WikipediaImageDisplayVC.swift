@@ -44,23 +44,6 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
         let image = Image.imageArray[indexPath.row]
-        if let url = URL(string: image.thumbnail) {
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-
-                //“promise” forcing this piece of async code to be sync, so it happens in my for loop
-                guard let data = data, error == nil else { return }
-
-                DispatchQueue.main.async {
-                    cell.imageViewCell.image = UIImage(data: data)
-//                    cell.imageView?.image = UIImage(data: data)
-                    //setting that data equal to data of the first image view
-                }
-            }
-            DispatchQueue.global(qos: .background).async {
-
-                task.resume()
-            }
-        }
         return cell
     }
 }

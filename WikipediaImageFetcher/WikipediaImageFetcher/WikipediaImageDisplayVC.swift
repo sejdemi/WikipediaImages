@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
 
@@ -53,8 +54,12 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
-        let image = allImages[indexPath.item].image
-        cell.imageViewCell.image = image
+        let image = allImages[indexPath.item]
+        if let url = URL(string: allImages[indexPath.item].thumbnail) {
+            cell.imageViewCell.kf.setImage(with: url, placeholder: UIImage(named: "black texture"))
+        }
+
+//        cell.imageViewCell.image = image
 
         let finalFrame: CGRect = cell.frame
         cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 200, height: 200)

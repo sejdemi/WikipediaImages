@@ -6,16 +6,12 @@ class Image {
 
     //wanted to keep the title in so as to give the user (you) a little bit of background on what they were looking at
 //    var title: String
-    //the link to the url string is represented by this property
+    //the link to the url string is represented by this property, kept in the force unwrap because I know for a fact that there will be a thumbnail string of some sort. I provide a default in the WikipediaApiClient class.
     var thumbnail: String {
         didSet {
             let url = URL(string: thumbnail)
             WikipediaAPIClient.downloadImage(at: url!) { (image) in
-                if image == nil {
-                    self.image = UIImage(named: "black texure.jpg")
-                } else{
                     self.image = image
-                }
             }
         }
     }

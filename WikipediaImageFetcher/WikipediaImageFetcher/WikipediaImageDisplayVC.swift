@@ -54,13 +54,12 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
-        let image = allImages[indexPath.item]
+        //use kingfisher to set images
         if let url = URL(string: allImages[indexPath.item].thumbnail) {
             cell.imageViewCell.kf.setImage(with: url, placeholder: UIImage(named: "black texture"))
         }
 
-//        cell.imageViewCell.image = image
-
+        //animate frames so it appears that cells are flying in and out
         let finalFrame: CGRect = cell.frame
         cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 200, height: 200)
 

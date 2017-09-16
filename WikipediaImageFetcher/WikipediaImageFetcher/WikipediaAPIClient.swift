@@ -45,13 +45,13 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
         }
 
         imageArray.append(image)
-        //        print(image.thumbnail)
     }
 
     return imageArray
 }
 
 
+//download each image and and pass in the image into the closure
 extension WikipediaAPIClient {
 
     static func downloadImage(at url: URL, handler: @escaping (UIImage?) -> Void) {

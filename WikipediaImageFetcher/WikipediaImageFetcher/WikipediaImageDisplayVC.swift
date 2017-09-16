@@ -20,10 +20,13 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
         searchField.delegate = self
         //add correct selector function to abide by delegates' rules
-        searchField.addTarget(self, action: #selector(WikipediaImageDisplayVC.textDidChange(_:)), for: UIControlEvents.allEvents)
+        searchField.addTarget(self, action: #selector(WikipediaImageDisplayVC.textDidChange(_:)), for: UIControlEvents.allEditingEvents)
 
         self.collectionView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "black texture.jpg"))
     }
+
+
+
 
     //our selector function which is handling any changes made in the text field to trigger an API call, which is then altering out allImages variable
     func textDidChange(_ sender: UITextField) {
@@ -36,7 +39,7 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
             case .success(let responseImages):
 
                 self.allImages = responseImages
-
+                  print(self.allImages.count)
             case .failure(let error):
 
                 print(error.localizedDescription)
@@ -50,6 +53,7 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
         }
 
         self.collectionView.reloadData()
+
     }
 
     // MARK: - Data Source
@@ -65,12 +69,14 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
     //return the count of the images in the image array, feel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
         return allImages.count
     }
 
 
 
 //very similar to standard tableView cellForRowAt function as well
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //cast the cell to your custom tableview cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
@@ -82,9 +88,10 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
         //animate frames so it appears that cells are flying in and out
         let finalFrame: CGRect = cell.frame
 
-        cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 200, height: 200)
+        cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 0, height: 0)
 
         UIView.animate(withDuration: 1, animations: {
+
             cell.frame = finalFrame
 
         })

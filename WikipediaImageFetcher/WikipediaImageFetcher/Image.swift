@@ -11,7 +11,6 @@ class Image {
         didSet {
 
             let url = URL(string: thumbnail)
-
             //made sure to ensure that the image was weak self to try to decrease reference count and avoid retain cycles/strong reference cycle
             WikipediaAPIClient.downloadImage(at: url!) { (image) in
 

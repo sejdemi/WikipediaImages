@@ -39,20 +39,21 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
             case .success(let responseImages):
 
                 self.allImages = responseImages
-                  print(self.allImages.count)
+                print(self.allImages.count)
+
             case .failure(let error):
 
                 print(error.localizedDescription)
 
-                DispatchQueue.main.async {
+            }
 
-                    self.collectionView.reloadData()
+            //always update UIImages in a backgrounf thread especially when it comes to dealing with data from an API call otherwise it will block main thread
+            DispatchQueue.main.async {
 
-                }
+                self.collectionView.reloadData()
+
             }
         }
-
-        self.collectionView.reloadData()
 
     }
 

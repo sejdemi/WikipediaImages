@@ -39,7 +39,6 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
             case .success(let responseImages):
 
                 self.allImages = responseImages
-                print(self.allImages.count)
 
             case .failure(let error):
 

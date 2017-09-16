@@ -11,12 +11,18 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
     var allImages = [Image]()
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
-        self.collectionView.dataSource = self
+        self.collectionView.dataSource = self //set the delegate and datasource, can do manually or programatically
+
         self.collectionView.delegate = self
+
         searchField.delegate = self
+        //add correct selector function to abide by delegates' rules
         searchField.addTarget(self, action: #selector(WikipediaImageDisplayVC.textDidChange(_:)), for: UIControlEvents.allEvents)
+
+        self.collectionView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "black texture.jpg"))
     }
 
     //our selector function which is handling any changes made in the text field to trigger an API call, which is then altering out allImages variable
@@ -24,17 +30,25 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
         WikipediaAPIClient.generateWikipediaImages(for: searchField.text ?? "") {
             (response) in
+
             switch response {
+
             case .success(let responseImages):
+
                 self.allImages = responseImages
+
             case .failure(let error):
+
                 print(error.localizedDescription)
 
                 DispatchQueue.main.async {
+
                     self.collectionView.reloadData()
+
                 }
             }
         }
+
         self.collectionView.reloadData()
     }
 
@@ -48,7 +62,7 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
     }
 
 
-    //we can either return the count of the images in the image array, or hard code it to 50, either way it is the same result
+    //return the count of the images in the image array, feel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allImages.count
@@ -56,23 +70,26 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
 
 
-
+//very similar to standard tableView cellForRowAt function as well
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //cast the cell to your custom tableview cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! WikipediaImageViewCell
-        //use kingfisher to set images
+        //use kingfisher to set images, you access the url and voila!
         if let url = URL(string: allImages[indexPath.item].thumbnail) {
-            cell.imageViewCell.kf.setImage(with: url, placeholder: UIImage(named: "black texture"))
-        }
 
+            cell.imageViewCell.kf.setImage(with: url)
+        }
         //animate frames so it appears that cells are flying in and out
         let finalFrame: CGRect = cell.frame
+
         cell.frame = CGRect(x: finalFrame.origin.x - 1000, y: -500, width: 200, height: 200)
 
         UIView.animate(withDuration: 1, animations: {
             cell.frame = finalFrame
 
         })
-
+        //finally return the cell
         return cell
     }
+
 }

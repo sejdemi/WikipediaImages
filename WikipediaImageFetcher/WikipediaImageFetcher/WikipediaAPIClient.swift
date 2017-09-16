@@ -6,10 +6,13 @@ import Alamofire
 final class WikipediaAPIClient {
 
     private static let baseURL = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=96&pilimit=50&generator=prefixsearch&gpssearch="
+    
     private static let otherInfoURL = "&gpslimit=50"
 
     static func generateWikipediaImages(for searchTerm: String, completion: @escaping (WikipediaAPIClientResponse) -> ()) {
+
         let url = baseURL + searchTerm + otherInfoURL
+        //the URL will constantly change depending on the water user inputs into the text field
         Alamofire.request(url, method: .get).responseJSON { (response) in
 
             guard let json = response.result.value else {return}
@@ -29,7 +32,9 @@ final class WikipediaAPIClient {
 
 
 private func getImageDetails(from json: [String: Any]) -> [Image] {
+
     var imageArray = [Image]()
+
     let queryJSON = json["query"] as? [String: Any] ?? ["": ""]
 
     let pagesJSON = queryJSON["pages"] as? [String: Any] ?? ["": ""]
@@ -40,7 +45,9 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
         let image = Image(thumbnail: "https://media.timeout.com/images/103444978/image.jpg")
 
         let valueJSON = page.value as? [String: Any] ?? ["": ""]
+
         if let urlJSON = valueJSON["thumbnail"] as? [String: Any]  {
+            //continue further subscripting we are finally able to get the URL!
             image.thumbnail = urlJSON["source"] as? String ?? ""
         }
 
@@ -55,15 +62,23 @@ private func getImageDetails(from json: [String: Any]) -> [Image] {
 extension WikipediaAPIClient {
 
     static func downloadImage(at url: URL, handler: @escaping (UIImage?) -> Void) {
+
         let session = URLSession.shared
+
         let request = URLRequest(url: url)
+
         session.dataTask(with: request, completionHandler: { data, response, error in
+
             DispatchQueue.main.async {
+
                 guard let rawData = data, let image = UIImage(data: rawData)
+
                     else { handler(nil); return }
+
                 handler(image)
             }
-        }).resume()
+
+        }).resume() //this actually calls the function
     }
 }
 

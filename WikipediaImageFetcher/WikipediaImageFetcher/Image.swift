@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-
 //I thought long and hard about whether or not I needed a model class for this particular challenge. I thought that for organizational purposes I would keep my Image class in arather than having a generic dictionary that had two key, value pairs that conveyed the same thing. The API gets called so many times so, which made me feel that the Image class was almost "throwaway" variables"
 class Image {
     //wanted to keep the title in so as to give the user (you) a little bit of background on what they were looking at

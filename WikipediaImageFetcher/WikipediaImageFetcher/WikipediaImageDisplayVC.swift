@@ -50,7 +50,6 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
             DispatchQueue.main.async {
                 //be extra careful about brackets and when to update UI
-
                 self.collectionView.reloadData()
 
             }

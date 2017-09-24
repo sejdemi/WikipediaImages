@@ -30,7 +30,6 @@ final class WikipediaAPIClient {
     }
 }
 
-
 private func getImageDetails(from json: [String: Any]) -> [Image] {
 
     var imageArray = [Image]()

@@ -20,6 +20,7 @@ class WikipediaImageDisplayVC: UIViewController, UITextFieldDelegate, UICollecti
 
         searchField.delegate = self
         //add correct selector function to abide by delegates' rules
+        //do more research about control events
         searchField.addTarget(self, action: #selector(WikipediaImageDisplayVC.textDidChange(_:)), for: UIControlEvents.allEditingEvents)
 
         self.collectionView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "black texture.jpg"))

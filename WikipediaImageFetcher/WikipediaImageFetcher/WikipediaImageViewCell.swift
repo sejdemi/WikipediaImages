@@ -10,5 +10,4 @@ class WikipediaImageViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-
 }
